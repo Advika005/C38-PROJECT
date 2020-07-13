@@ -1,1 +1,2 @@
-# C38-PROJECT
+# synchronousBallMovement
+Ball moving synchronously
