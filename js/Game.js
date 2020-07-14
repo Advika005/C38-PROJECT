@@ -31,15 +31,19 @@ class Game{
         }
         car1 = createSprite(100,200);
         car1.addImage("car1",car1_img)
+        car1.scale = 0.2
         
         car2 = createSprite(300,200);
         car2.addImage("car2",car2_img)
+        car2.scale = 0.2
 
         car3 = createSprite(500,200);
         car3.addImage("car3",car3_img)
+        car3.scale = 0.2
 
         car4 = createSprite(700,200);
         car4.addImage("car1",car4_img)
+        car4.scale = 0.2
 
         cars = [car1,car2,car3,car4];
     }
@@ -52,7 +56,7 @@ class Game{
         if(allPlayers !== undefined){
             background(rgb(198,135,103));
 
-            image(track,0,-displayHeight*4,displayWidth*7,displayHeight);
+            image(track,0,170,displayWidth*6,displayHeight*2);
 
 
             //var display_position = 130;
@@ -61,15 +65,15 @@ class Game{
             var index = 0;
 
            //x and y position of the cars
-			var y = 200 ;
-			var x = 0;
+            var y = 170 ;
+			var x = -30;
 
             for(var plr in allPlayers){
                 //add 1 to the index for every loop
                 index = index+1;
 
                 //position the cars a little away from eachother
-                y = y+250;
+                y = y+220;
 
                 //use data from the database to display the cars in the y direction
                 x = displayHeight-allPlayers[plr].distance;
@@ -78,8 +82,8 @@ class Game{
 
                 if(index===player.index){
                     cars[index-1].shapeColor = "red";
-                    camera.position.x = cars[index-1].x+300;
-                    camera.position.y = displayWidth/1.7;
+                    camera.position.x = cars[index-1].x+500;
+                    camera.position.y = displayWidth/2;
                 }
                 
 
